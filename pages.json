@@ -1,0 +1,133 @@
+{
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "DiscuzX",
+		"navigationBarBackgroundColor": "#606266",
+		"backgroundColor": "#606266"
+	},
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"tabBar": {
+		"list": [{
+			"pagePath": "pages/index/index"
+		}, {
+			"pagePath": "pages/board/board"
+		}, {
+			"pagePath": "pages/message/message"
+		}, {
+			"pagePath": "pages/user/user"
+		}]
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/auth/auth",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/auth/register/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/board/board",
+			"style": {
+				"navigationBarTitleText": "板块",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/board/list/list",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/message/atme/atme",
+			"style": {
+				"navigationBarTitleText": "提到我的",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/message/comment/comment",
+			"style": {
+				"navigationBarTitleText": "评论",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/user/post/post",
+			"style": {
+				"navigationBarTitleText": "我的发表",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/reply/reply",
+			"style": {
+				"navigationBarTitleText": "我的回复",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/star/star",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+			}
+
+		}, {
+			"path": "pages/post/post",
+			"style": {
+				"navigationBarTitleText": "发帖",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	]
+}
