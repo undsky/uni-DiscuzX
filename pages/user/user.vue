@@ -21,8 +21,9 @@
 
 			<view class="u-m-t-20">
 				<u-cell-group :border="false">
+					<u-cell-item @click="qiandao" icon="edit-pen" :arrow="false" title="签到"></u-cell-item>
 					<u-cell-item @click="$util.helper.goto('./post/post', true)" icon="file-text" title="我的发表"></u-cell-item>
-					<u-cell-item @click="$util.helper.goto('./reply/reply', true)" icon="edit-pen" title="我的回复"></u-cell-item>
+					<u-cell-item @click="$util.helper.goto('./reply/reply', true)" icon="chat" title="我的回复"></u-cell-item>
 					<u-cell-item @click="$util.helper.goto('./star/star', true)" icon="heart" title="我的收藏"></u-cell-item>
 				</u-cell-group>
 			</view>
@@ -51,6 +52,21 @@ export default {
 		})
 	},
 	methods: {
+		qiandao: async function() {
+			const result = await this.$http.post({
+				r: 'user/sign'
+			});
+			uni.showModal({
+				title: '',
+				content: result.head.errInfo,
+				showCancel: false,
+				cancelText: '',
+				confirmText: '',
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+		},
 		logout() {
 			this.$store.commit('clearUser');
 		}

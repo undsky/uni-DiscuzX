@@ -1,6 +1,7 @@
 <template>
 	<view class="content">
 		<z-paging
+			:fixed="false"
 			style="height: 100%;"
 			ref="paging"
 			v-model="zList"
