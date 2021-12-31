@@ -24,14 +24,10 @@
 								<view class="text-gray margin-left-xs">{{ $u.timeFrom(item.last_reply_date || item.replied_date) }}</view>
 							</view>
 							<view class="text-gray">
-								<template v-if="item.hits">
-									<text class="cuIcon-attentionfill margin-lr-xs"></text>
-									{{ item.hits }}
-								</template>
-								<template v-if="'undefined' != typeof item.replies">
-									<text class="cuIcon-messagefill margin-lr-xs"></text>
-									{{ item.replies }}
-								</template>
+								<text class="cuIcon-attentionfill margin-lr-xs"></text>
+								{{ item.hits || 0 }}
+								<text class="cuIcon-messagefill margin-lr-xs"></text>
+								{{ item.replies || 0 }}
 							</view>
 						</view>
 					</view>

@@ -61,7 +61,7 @@ export default {
 				content: result.head.errInfo,
 				showCancel: false,
 				cancelText: '',
-				confirmText: '',
+				confirmText: '确定',
 				success: res => {},
 				fail: () => {},
 				complete: () => {}
