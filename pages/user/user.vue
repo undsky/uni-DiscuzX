@@ -27,7 +27,7 @@
 					<u-cell-item @click="$util.helper.goto('./star/star', true)" icon="heart" title="我的收藏"></u-cell-item>
 				</u-cell-group>
 			</view>
-
+			<view class="u-m-t-20 flex justify-center"><u-link href="https://www.undsky.com" :under-line="true">联系作者</u-link></view>
 			<view v-if="user" class="margin-top-lg padding"><u-button @click="logout">退出登录</u-button></view>
 		</scroll-view>
 		<dx-tabbar :currentTab="4"></dx-tabbar>

@@ -19,3 +19,8 @@ H5跨域问题参考：[https://ask.dcloud.net.cn/article/35267](https://ask.dcl
 ### [项目演示](https://bbs.undsky.com/h5/#/)
 
 ### [查看更多项目](https://www.undsky.com)
+
+-------
+开发咨询可加微信：undsky
+
+![](https://undsky.com/public/img/wx.jpeg)
