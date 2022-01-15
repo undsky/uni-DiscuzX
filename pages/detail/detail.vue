@@ -108,6 +108,10 @@
 
 			uni.$on('reply', async data => {
 				if (this.user) {
+					uni.showLoading({
+						mask: true
+					});
+					
 					const result = await this.$http.post({
 						r: 'forum/topicadmin',
 						act: 'reply',
@@ -129,6 +133,9 @@
 							}
 						})
 					})
+					
+					uni.hideLoading()
+					
 					uni.showToast({
 						title: result.errcode
 					});
