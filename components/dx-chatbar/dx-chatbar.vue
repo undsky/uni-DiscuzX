@@ -2,7 +2,7 @@
 	<view>
 		<view class="cu-bar foot input" :style="[{ bottom: InputBottom + 'px' }]">
 			<textarea
-				class="margin-left-sm"
+				class="margin-lr-sm"
 				:value="replytext"
 				placeholder="请输入内容"
 				auto-height
@@ -13,7 +13,7 @@
 				@focus="InputFocus"
 				@blur="InputBlur"
 			></textarea>
-			<button style="width: 70px;" @click="$u.throttle(send, 1000)" class="cu-btn bg-green shadow margin-left-sm">发送</button>
+			<u-button throttleTime="1000" type="primary" @click="send">发送</u-button>
 		</view>
 	</view>
 </template>

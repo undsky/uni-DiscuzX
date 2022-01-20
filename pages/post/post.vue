@@ -116,60 +116,64 @@ export default {
 						mask: true
 					});
 
-					let aid = [];
-					let body = [
-						{
-							type: 0,
-							infor: this.model.content
-						}
-					];
-					let topic = {
-						title: this.model.title,
-						fid: _boardId,
-						isOnlyAuthor: 0,
-						isHidden: 0,
-						isAnonymous: 0
-					};
-					const images = this.$refs.upload.lists;
-					if (images && images.length > 0) {
-						images.forEach(res => {
-							const imgdata = res.response;
-							body.push({
-								type: 1,
-								infor: imgdata.body.attachment[0].urlName.replace('//forum', '/forum')
-							});
-							aid.push(imgdata.body.attachment[0].id);
-						});
-					}
-					topic.content = JSON.stringify(body);
-					topic.aid = aid.join();
-
-					const result = await this.$http.post({
-						r: 'forum/topicadmin',
-						act: 'new',
-						json: JSON.stringify({
-							body: {
-								json: topic
+					try {
+						let aid = [];
+						let body = [
+							{
+								type: 0,
+								infor: this.model.content
 							}
-						})
-					});
-
-					uni.hideLoading();
-
-					uni.showModal({
-						title: '',
-						content: '发帖成功',
-						showCancel: false,
-						cancelText: '',
-						confirmText: '确定',
-						success: res => {
-							uni.navigateBack({
-								delta: 1
+						];
+						let topic = {
+							title: this.model.title,
+							fid: _boardId,
+							isOnlyAuthor: 0,
+							isHidden: 0,
+							isAnonymous: 0
+						};
+						const images = this.$refs.upload.lists;
+						if (images && images.length > 0) {
+							images.forEach(res => {
+								const imgdata = res.response;
+								body.push({
+									type: 1,
+									infor: imgdata.body.attachment[0].urlName.replace('//forum', '/forum')
+								});
+								aid.push(imgdata.body.attachment[0].id);
 							});
-						},
-						fail: () => {},
-						complete: () => {}
-					});
+						}
+						topic.content = JSON.stringify(body);
+						topic.aid = aid.join();
+
+						const result = await this.$http.post({
+							r: 'forum/topicadmin',
+							act: 'new',
+							json: JSON.stringify({
+								body: {
+									json: topic
+								}
+							})
+						});
+
+						uni.hideLoading();
+
+						uni.showModal({
+							title: '',
+							content: '发帖成功',
+							showCancel: false,
+							cancelText: '',
+							confirmText: '确定',
+							success: res => {
+								uni.navigateBack({
+									delta: 1
+								});
+							},
+							fail: () => {},
+							complete: () => {}
+						});
+					} catch (e) {
+						uni.hideLoading();
+					}
 				}
 			});
 		}
