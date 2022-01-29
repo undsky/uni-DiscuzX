@@ -88,6 +88,9 @@ export default {
 			return this.$util.mobcent.content(this.topic.content);
 		}
 	},
+	onUnload: function() {
+		uni.$off('reply');
+	},
 	onLoad: async function(options) {
 		_id = options.id;
 
