@@ -30,6 +30,9 @@ export default {
 	methods: {
 		send: async function() {
 			if (this.replytext) {
+				uni.showLoading({
+					mask: true
+				});
 				uni.$emit('reply', this.replytext);
 			} else {
 				uni.showToast({

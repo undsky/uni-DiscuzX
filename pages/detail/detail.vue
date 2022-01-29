@@ -52,7 +52,7 @@
 			</view>
 		</z-paging>
 		<view class="cu-tabbar-height"></view>
-		<dx-chatbar></dx-chatbar>
+		<dx-chatbar ref="chatbar"></dx-chatbar>
 		<u-popup v-model="showShare" mode="bottom" safe-area-inset-bottom><dx-share></dx-share></u-popup>
 	</view>
 </template>
@@ -92,12 +92,8 @@ export default {
 		_id = options.id;
 
 		uni.$on('reply', async data => {
-			if (this.user) {
-				uni.showLoading({
-					mask: true
-				});
-
-				try {
+			try {
+				if (this.user) {
 					const result = await this.$http.post({
 						r: 'forum/topicadmin',
 						act: 'reply',
@@ -122,22 +118,23 @@ export default {
 						})
 					});
 
-					uni.hideLoading();
-
+					this.$refs.chatbar.replytext = '';
 					uni.showToast({
 						title: result.errcode
 					});
 					this.$refs.paging.reload();
-				} catch (e) {
-					uni.hideLoading();
+				} else {
+					uni.navigateTo({
+						url: '../auth/auth',
+						success: res => {},
+						fail: () => {},
+						complete: () => {}
+					});
 				}
-			} else {
-				uni.navigateTo({
-					url: '../auth/auth',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
-				});
+			} catch (e) {
+				//TODO handle the exception
+			} finally {
+				uni.hideLoading();
 			}
 		});
 	},
