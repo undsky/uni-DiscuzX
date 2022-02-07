@@ -29,6 +29,10 @@ H5跨域问题参考：[https://ask.dcloud.net.cn/article/35267](https://ask.dcl
 ![](https://cdn.cloud.undsky.com/portal/discuzx/android.png)
 
 
+#### 微信小程序
+
+o(╥﹏╥)o 个人小程序没有通过审核，有测试需求的同学可加微信添加体验成员
+
 ### [查看更多项目](https://www.undsky.com)
 
 -------

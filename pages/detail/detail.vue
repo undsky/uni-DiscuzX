@@ -88,6 +88,10 @@ export default {
 			return this.$util.mobcent.content(this.topic.content);
 		}
 	},
+	onPullDownRefresh: function() {
+		this.firstLoaded = false;
+		uni.stopPullDownRefresh();
+	},
 	onUnload: function() {
 		uni.$off('reply');
 	},

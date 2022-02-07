@@ -110,7 +110,7 @@
 			"path": "pages/detail/detail",
 			"style": {
 				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
+				"enablePullDownRefresh": true,
 				"navigationStyle": "custom"
 			}
 
