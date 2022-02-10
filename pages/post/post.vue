@@ -8,7 +8,7 @@
 				<u-input :border="border" placeholder="请输入标题" v-model="model.title" type="text"></u-input>
 			</u-form-item>
 			<u-form-item :label-position="labelPosition" label="内容" prop="content">
-				<u-input type="textarea" :border="border" height="230" placeholder="请填写内容" v-model="model.content" />
+				<u-input type="textarea" :maxlength="-1" :border="border" height="230" placeholder="请填写内容" v-model="model.content" />
 			</u-form-item>
 			<u-form-item :label-position="labelPosition" label="上传图片" prop="photo" label-width="150">
 				<u-upload ref="upload" :action="action" :form-data="formData" name="uploadFile[]" width="160" height="160"></u-upload>
